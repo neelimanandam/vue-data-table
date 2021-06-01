@@ -38,6 +38,12 @@
     <slot name="footer"></slot>
   </div>
 </template>
+<style>
+table {
+  border-collapse: "collapse";
+  background-color: aqua;
+}
+</style>
 <script>
 import TableHeader from './TableHeader.vue'
 import TableRow from '@/components/TableRow.vue'
