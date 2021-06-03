@@ -1,15 +1,20 @@
 <template>
   <div>
     <div>
-      <slot name="header">
-        <header-component
-          v-bind:tabelTopHeader="tableTopHeader"
-        ></header-component>
-      </slot>
+      <slot name="header"> </slot>
     </div>
+
     <table id="table">
       <thead>
         <slot name="tableTop"></slot>
+
+        <tr>
+          <td colspan="100%">
+            <table-top-header
+              v-bind:tableTop="tableTopHeader"
+            ></table-top-header>
+          </td>
+        </tr>
         <tr>
           <th v-for="header in headers" v-bind:key="header.index">
             <slot name="tableHeader" v-bind:item="header">
@@ -58,10 +63,10 @@
 <script>
 import TableHeader from './TableHeader.vue'
 import TableRow from '@/components/TableRow.vue'
-import HeaderComponent from './HeaderComponent.vue'
+import TableTopHeader from './TableTopHeader.vue'
 
 export default {
-  components: { TableHeader, TableRow, HeaderComponent },
+  components: { TableHeader, TableRow, TableTopHeader },
   name: 'DataTable',
   props: {
     headers: {
@@ -84,7 +89,7 @@ export default {
     }
   }
   // created: function () {
-  //   console.log(this.headers)
+  //   console.log('tableTopHeader value is', this.tableTopHeader)
   // }
 }
 </script>

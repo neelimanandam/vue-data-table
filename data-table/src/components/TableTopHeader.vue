@@ -1,11 +1,11 @@
 <template>
-  <h1>{{ tableTopHeader }}</h1>
+  <span>{{ tableTop }}</span>
 </template>
 <script>
 export default {
-  name: 'HeaderComponent',
+  name: 'TableTopHeader',
   props: {
-    tableTopHeader: {
+    tableTop: {
       type: String,
       default: () => {
         return ''

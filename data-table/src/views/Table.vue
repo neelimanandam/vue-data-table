@@ -1,15 +1,19 @@
 <template>
   <div>
-    <data-table v-bind:headers="userHeaders" v-bind:rows="userRows">
+    <data-table
+      v-bind:headers="userHeaders"
+      v-bind:rows="userRows"
+      v-bind:tableTopHeader="tableTopHeader"
+    >
       <template v-slot:header>
         <h1>This is the header coming from slot</h1>
       </template>
       <template v-slot:footer>
         <h1>This footer is coming from slot</h1>
       </template>
-      <template v-slot:tableTop>
+      <!-- <template v-slot:tableTop>
         <span>This is table top</span>
-      </template>
+      </template> -->
       <template v-slot:noData>
         <span>Data not found</span>
       </template>
@@ -40,7 +44,7 @@ export default {
   },
   data () {
     return {
-      tableHeader: 'This is the top of the table',
+      tableTopHeader: 'This is the top of the table',
       userHeaders: ['country', 'state', 'language'],
       userRows: [
         { country: 'India', state: 'Telangana', language: 'Telugu' },
