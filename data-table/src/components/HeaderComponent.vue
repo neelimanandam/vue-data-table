@@ -1,8 +1,16 @@
 <template>
-  <h1>This header is coming from header component</h1>
+  <h1>{{ tableTopHeader }}</h1>
 </template>
 <script>
 export default {
-  name: 'HeaderComponent'
+  name: 'HeaderComponent',
+  props: {
+    tableTopHeader: {
+      type: String,
+      default: () => {
+        return ''
+      }
+    }
+  }
 }
 </script>

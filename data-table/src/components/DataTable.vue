@@ -2,13 +2,12 @@
   <div>
     <div>
       <slot name="header">
-        <header-component></header-component>
+        <header-component
+          v-bind:tabelTopHeader="tableTopHeader"
+        ></header-component>
       </slot>
     </div>
-    <table
-      border="1px solid black;"
-      style="border-collapse: collapse; text-align: center"
-    >
+    <table id="table">
       <thead>
         <slot name="tableTop"></slot>
         <tr>
@@ -39,9 +38,21 @@
   </div>
 </template>
 <style>
-table {
-  border-collapse: "collapse";
-  background-color: aqua;
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#table td,
+#table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#table th {
+  color: rgb(2, 2, 2);
+}
+#table td {
+  color: gray;
 }
 </style>
 <script>
@@ -63,6 +74,12 @@ export default {
       type: Array,
       default: () => {
         return []
+      }
+    },
+    tableTopHeader: {
+      type: String,
+      default: () => {
+        return ''
       }
     }
   }

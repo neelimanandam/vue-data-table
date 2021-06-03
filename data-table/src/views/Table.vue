@@ -40,6 +40,7 @@ export default {
   },
   data () {
     return {
+      tableHeader: 'This is the top of the table',
       userHeaders: ['country', 'state', 'language'],
       userRows: [
         { country: 'India', state: 'Telangana', language: 'Telugu' },
