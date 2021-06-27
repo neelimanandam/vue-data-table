@@ -50,7 +50,11 @@ export default {
         { country: 'India', state: 'Telangana', language: 'Telugu' },
         { country: 'India', state: 'AP', language: 'Telugu' },
         { country: 'India', state: 'Tamil Nadu', language: 'Tamil' },
-        { country: 'India', state: 'Bangalore', language: 'Kannada' }
+        { country: 'India', state: 'Bangalore', language: 'Kannada' },
+        { country: 'India', state: 'Telangana', language: 'Telugu' },
+        { country: 'Canada', state: 'Quebec', language: 'French' },
+        { country: 'United States', state: 'New york', language: 'English' },
+        { country: 'Australia', state: 'Victoria', language: 'English' }
       ]
     }
   }
