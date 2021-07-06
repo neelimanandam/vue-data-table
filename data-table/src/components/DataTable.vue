@@ -125,18 +125,18 @@ export default {
     }
   },
   computed: {
-    filteredRows () {
+    filteredRowsBySearch () {
       if (!this.searchItem) {
-        for (var i = 0; i < this.dropDownListValue; i++) {
-          var trows = this.tableRows
-          trows = trows + this.rows
-          console.log(trows)
-        }
         return this.rows
       } else {
         return this.rows.filter(this.FilterBysearch)
       }
+    },
+    filteredRows () {
+      console.log('dropDownList value is ', this.dropDownListValue)
+      return this.filteredRowsBySearch.slice(0, this.dropDownListValue)
     }
+
   },
   methods: {
     searchItemValue () {
